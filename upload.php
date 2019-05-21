@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "capstone");
+$con = mysqli_connect("localhost", "root", "", "tut");
 if ($con) {
     $file = $_FILES['csvfile']['tmp_name'];
     $handle = fopen($file, "r");
@@ -22,7 +22,7 @@ if ($con) {
         } else {
             $query = "INSERT $table ($student_id, $level, $semester, $courses, $grades, $cgpa, $sgpa) VALUES ('$cont[0]', '$cont[1]', '$cont[2]','$cont[3]','$cont[4]','$cont[5]','$cont[6]');";
 
-            echo "<script type='text/javascript'>alert('Upload successful');window.location.href='uploadresults.php';</script>";
+            echo "<script type='text/javascript'>alert('Upload successful');window.location.href='index.php';</script>";
             mysqli_query($con, $query);
         }
         $i++;
